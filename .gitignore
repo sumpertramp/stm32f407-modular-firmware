@@ -1,0 +1,28 @@
+# ===== STM32CubeIDE =====
+.metadata/
+.settings/
+Debug/
+Release/
+
+# CubeIDE generated
+*.launch
+*.log
+
+# ===== Build files =====
+*.o
+*.d
+*.elf
+*.map
+*.hex
+*.bin
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== VSCode / IDE =====
+.vscode/
+.idea/
+
+# ===== Backup files =====
+*~
