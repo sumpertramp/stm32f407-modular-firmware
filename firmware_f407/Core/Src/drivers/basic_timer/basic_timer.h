@@ -2,7 +2,7 @@
  * timer_drv.h
  *
  *  Created on: Dec 22, 2025
- *      Author: smyyd
+ *      Author: sumeyye unal
  */
 
 #ifndef BASIC_TIMER_H
