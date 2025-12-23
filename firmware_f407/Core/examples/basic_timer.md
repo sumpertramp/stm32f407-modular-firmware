@@ -87,7 +87,7 @@ The timer logic is fully encapsulated inside the **basic_timer driver**.
 void basic_timer_init(void);
 uint32_t basic_timer_get_tick(void);
 
-```c
+```
 
 ## ⚡ Interrupt Handling Strategy
 
@@ -105,7 +105,7 @@ void TIM6_DAC_IRQHandler(void)
     }
 }
 
-```c
+```
 
 ## 💡 Example Usage – LED Toggle (Summary)
 
