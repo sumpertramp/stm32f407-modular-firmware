@@ -33,7 +33,7 @@ directly to **TIM4 channels**.
 | LED Color | GPIO Pin | Timer | Channel | Alternate Function |
 |---------|---------|-------|---------|--------------------|
 | Yellow | PD13 | TIM4 | CH2 | AF2 |
----
+
 ⚠️ **Important:**  
 PWM output requires:
 - Timer channel support
@@ -121,7 +121,7 @@ Registers involved:
 5. LED brightness smoothly fades in and out
 ---
 ## Project Structure
-'''text
+```text
 Drivers/
 └── timer_pwm/
     ├── timer_pwm.c
@@ -132,7 +132,7 @@ Core/
 │   └── main.c
 └── examples/
     └── general_purpose_timer_pwm.c
-'''
+```
 ---
 ## Extending This Module
 
