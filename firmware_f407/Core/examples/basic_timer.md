@@ -82,7 +82,6 @@ The timer logic is fully encapsulated inside the **basic_timer driver**.
 
 ---
 ### Public API
-
 ```c
 void basic_timer_init(void);
 uint32_t basic_timer_get_tick(void);
