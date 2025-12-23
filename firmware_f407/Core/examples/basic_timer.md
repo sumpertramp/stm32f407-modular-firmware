@@ -50,7 +50,7 @@ Core/
 │ ├─ stm32f4xx_it.c
 │ └─ main.c
 
----
+ ```
 
 ## ⚙️ Timer Configuration (TIM6)
 
