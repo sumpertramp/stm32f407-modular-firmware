@@ -40,6 +40,7 @@ Because of this, they are ideal for:
 
 ## 🧱 Project Structure
 ---
+```text
 Core/
 ├─ Src/
 │ ├─ drivers/
@@ -49,7 +50,8 @@ Core/
 │ ├─ stm32f4xx_it.c
 │ └─ main.c
 
----
+
+```text
 
 ## ⚙️ Timer Configuration (TIM6)
 
