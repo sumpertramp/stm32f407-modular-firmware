@@ -9,6 +9,7 @@
 #define BOARD_H
 
 #include "board.h"
+void board_init(void);
 
 #endif /* BOARD_H */
 

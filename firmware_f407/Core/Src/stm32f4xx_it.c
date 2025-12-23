@@ -22,6 +22,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "basic_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,6 +52,14 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void TIM6_DAC_IRQHandler(void)
+{
+    if (TIM6->SR & TIM_SR_UIF)
+    {
+        TIM6->SR &= ~TIM_SR_UIF;
+        basic_timer_irq_handler();
+    }
+}
 
 /* USER CODE END 0 */
 

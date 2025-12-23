@@ -5,12 +5,17 @@
  *      Author: smyyd
  */
 
-#include "../stm32f407/board.h"
+#include "board.h"
+
+#include "gpio_drv.h"
+#include "../../drivers/basic_timer/basic_timer.h"
+
 
 void board_init(void)
 {
     HAL_Init();
     board_clock_init();
+    gpio_drv_init();
 }
 
 void board_clock_init(void)
