@@ -37,6 +37,3 @@ int main(void)
         for (volatile uint32_t i = 0; i < 15000; i++);
     }
 }
-
-
-
