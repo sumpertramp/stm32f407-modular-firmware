@@ -27,5 +27,3 @@ Thumbs.db
 # ===== Backup files =====
 *~
 
-# Ignore all Markdown files by default
-*.md
