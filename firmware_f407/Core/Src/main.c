@@ -1,41 +1,46 @@
 #include "stm32f4xx.h"
-#include "timer_pwm.h"
+#include "advanced_pwm.h"
 
-/* PD13 = TIM4_CH2 */
-static void LED_PD13_PWM_Init(void)
-{
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
-
-    /* Alternate Function */
-    GPIOD->MODER &= ~(3U << (13 * 2));
-    GPIOD->MODER |=  (2U << (13 * 2));
-
-    /* AF2 = TIM4 */
-    GPIOD->AFR[1] &= ~(0xF << ((13 - 8) * 4));
-    GPIOD->AFR[1] |=  (2U  << ((13 - 8) * 4));
-
-    GPIOD->OTYPER  &= ~(1U << 13);
-    GPIOD->OSPEEDR |=  (3U << (13 * 2));
-}
+static void GPIO_TIM1_Init(void);
 
 int main(void)
 {
-    LED_PD13_PWM_Init();
-    TIM4_PWM_Init(1000); // 1 kHz
+    GPIO_TIM1_Init();
 
-    uint8_t duty = 0;
-    int8_t step = 1;
+    /* 20 kHz motor-friendly PWM */
+    TIM1_PWM_Init(20000);
+
+    /* %50 duty */
+    TIM1_PWM_SetDuty(1, TIM1->ARR / 2);
+
+    TIM1_PWM_Enable();
 
     while (1)
     {
-        TIM4_PWM_SetDuty(TIM4_CH2, duty);
-
-        duty += step;
-        if (duty == 100 || duty == 0)
-            step = -step;
-
-        for (volatile uint32_t i = 0; i < 15000; i++);
+        /* Duty sweep – logic analyzer test */
+        for (uint16_t d = 0; d < TIM1->ARR; d += 200)
+        {
+            TIM1_PWM_SetDuty(1, d);
+            for (volatile uint32_t i = 0; i < 50000; i++);
+        }
     }
+}
+
+static void GPIO_TIM1_Init(void)
+{
+    /* Enable GPIOA & GPIOB clocks */
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+
+    /* PA8 – TIM1_CH1 */
+    GPIOA->MODER &= ~(3U << (8 * 2));
+    GPIOA->MODER |=  (2U << (8 * 2));      /* AF mode */
+    GPIOA->AFR[1] |= (1U << ((8 - 8) * 4)); /* AF1 */
+
+    /* PB13 – TIM1_CH1N */
+    GPIOB->MODER &= ~(3U << (13 * 2));
+    GPIOB->MODER |=  (2U << (13 * 2));      /* AF mode */
+    GPIOB->AFR[1] |= (1U << ((13 - 8) * 4)); /* AF1 */
 }
 
 

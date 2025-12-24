@@ -55,6 +55,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Core/Src/drivers/gpio&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Core/Src/drivers/basic_timer&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Core/Src/drivers/general_purpose(pwm)_timer&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Core/Src/drivers/advanced_timer(pwm)&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.210403714" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
