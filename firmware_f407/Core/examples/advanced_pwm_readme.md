@@ -69,7 +69,7 @@ that the PWM frequency remains constant.
 
 ---
 
-## 🔌 Pin Mapping
+## Pin Mapping
 
 | Signal      | Pin  | Description                  |
 |------------|------|------------------------------|
@@ -91,7 +91,7 @@ correct advanced timer behavior.
 The following capture shows TIM1 complementary PWM outputs
 measured using a logic analyzer.
 
-![Advanced Timer Complementary PWM Logic Analyzer Capture](docs/logic_analyzer/advanced_timer_logic_analyzer_measure.png)
+![Advanced Timer Complementary PWM Logic Analyzer Capture](../../../docs/logic_analyzer/advanced_timer_logic_analyzer_measure.png)
 **Figure:** Logic analyzer capture showing TIM1_CH1 (PA8) and
 TIM1_CH1N (PB13) operating in complementary PWM mode.
 Dead-time between switching edges is visible, confirming
@@ -105,7 +105,7 @@ Dead-time was measured using manual cursors in Saleae Logic:
 - Cursor B placed on TIM1_CH1N (PB13) rising edge (turn-on)
 
 The time difference between the two cursors represents the configured dead-time.
-![Advanced Timer Complementary PWM Dead-Time Logic Analyzer Capture](docs/logic_analyzer/advanced_timer_deadtime_logic_analyzer.pwm)
+![Advanced Timer Complementary PWM Dead-Time Logic Analyzer Capture](../../../docs/logic_analyzer/advanced_timer_deadtime_logic_analyzer.pwm)
 **Measured dead-time:** ~4.24 µs
 
 This confirms that complementary outputs are properly interlocked and shoot-through protection is active.
