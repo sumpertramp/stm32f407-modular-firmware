@@ -35,10 +35,3 @@ int main(void)
         SysTick_DelayMs(500);
     }
 }
-
-
-
-
-
-
-

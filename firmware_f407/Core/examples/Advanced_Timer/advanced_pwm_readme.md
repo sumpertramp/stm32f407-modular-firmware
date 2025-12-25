@@ -91,8 +91,12 @@ correct advanced timer behavior.
 The following capture shows TIM1 complementary PWM outputs
 measured using a logic analyzer.
 
+<<<<<<< Updated upstream
 ![TIM1 Complementary PWM – Saleae Logic](https://github.com/sumpertramp/stm32f407-modular-firmware/blob/main/firmware_f407/Core/examples/Advanced_Timer/advanced_timer_logic_analyzer_measure.PNG)
 
+=======
+![TIM1 Complementary PWM – Saleae Logic](docs/logic_analyzer/tim1_complementary_pwm_saleae.png)
+>>>>>>> Stashed changes
 **Figure:** Logic analyzer capture showing TIM1_CH1 (PA8) and
 TIM1_CH1N (PB13) operating in complementary PWM mode.
 Dead-time between switching edges is visible, confirming
@@ -106,7 +110,11 @@ Dead-time was measured using manual cursors in Saleae Logic:
 - Cursor B placed on TIM1_CH1N (PB13) rising edge (turn-on)
 
 The time difference between the two cursors represents the configured dead-time.
+<<<<<<< Updated upstream
 ![TIM1 Dead-Time Measurement – Saleae Logic](https://github.com/sumpertramp/stm32f407-modular-firmware/blob/main/firmware_f407/Core/examples/Advanced_Timer/advanced_timer_deadtime_logic_analyzer.PNG)
+=======
+![TIM1 Dead-Time Measurement – Saleae Logic](docs/logic_analyzer/tim1_deadtime_saleae.png)
+>>>>>>> Stashed changes
 **Measured dead-time:** ~4.24 µs
 
 This confirms that complementary outputs are properly interlocked and shoot-through protection is active.
