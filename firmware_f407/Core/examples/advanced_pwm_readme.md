@@ -92,6 +92,7 @@ The following capture shows TIM1 complementary PWM outputs
 measured using a logic analyzer.
 
 ![TIM1 Complementary PWM – Saleae Logic](https://github.com/sumpertramp/stm32f407-modular-firmware/blob/main/firmware_f407/Core/examples/Advanced_Timer/advanced_timer_logic_analyzer_measure.PNG)
+
 **Figure:** Logic analyzer capture showing TIM1_CH1 (PA8) and
 TIM1_CH1N (PB13) operating in complementary PWM mode.
 Dead-time between switching edges is visible, confirming
